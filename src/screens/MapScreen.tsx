@@ -42,7 +42,6 @@ const MapScreen = () => {
 
   const fetchNearbyLandmarks = async (latitude, longitude) => {
     try {
-      const API_KEY = 'AIzaSyBDuemyYR_wPxeeZX4Ierdu5kYkRTcA_EY';
       const response = await axios.get(
         `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=18.9221686, 72.8340940&radius=5000&type=tourist_attraction&key=${GOOGLE_API_KEY}`
       );
