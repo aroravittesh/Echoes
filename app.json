@@ -23,6 +23,10 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "GOOGLE_API_KEY":"GOOGLE_API_KEY",
+      "OPENAI_KEY": "OPENAI_API_KEY"
     }
   }
 }
