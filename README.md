@@ -15,13 +15,13 @@ Echoes is a React Native mobile app built using Expo that is an AI-powered Landm
 
 ### 1. Clone the Repository
 
-git clone https://github.com/aroravittesh/Echoes.git
+git clone https://github.com/aroravittesh/Echoes.git  
 cd Echoes
 
 ### 2. Install Dependencies
 
-npm install
-# or
+npm install  
+# or  
 yarn install
 
 ### 3. Start the Development Server
@@ -31,8 +31,9 @@ npx expo start
 ### 4. Set Up Environment Variables
 
 # Create a .env file in the root directory and add the following:
-MONGODB_URI=your_mongodb_connection_string
-OPENAI_API_KEY=your_openai_api_key
+
+MONGODB_URI=your_mongodb_connection_string  
+OPENAI_API_KEY=your_openai_api_key  
 GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 
 ### 📬 Contact
