@@ -12,8 +12,15 @@ router.post('/signup', async (req, res) => {
     const user = new User({ username, email, password: bcrypt.hashSync(password, 10) });
     console.log(username);
     await user.save();
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.json({ token });
+    const token = jwt.sign({ userId: user._id }, 'mysecret123', { expiresIn: '1h' });
+    res.json({
+      token,
+      user: {
+        _id: user._id,
+        username: user.username,
+        email: user.email,
+      },
+    });
   } catch (error) {
     res.status(500).json({ error: 'Server error' });
   }
@@ -22,12 +29,12 @@ router.post('/signup', async (req, res) => {
 // Login
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
-
+  console.log("I was here");
   const user = await User.findOne({ email });
   if (!user || !bcrypt.compareSync(password, user.password)) {
     return res.status(400).json({ error: 'Invalid credentials' });
   }
-  const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+  const token = jwt.sign({ userId: user._id }, 'mysecret123', { expiresIn: '1h' });
   res.status(200).json({
     token,
     user: {

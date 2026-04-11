@@ -24,7 +24,7 @@ export default function QuizScreen() {
         if (!userId) throw new Error("User ID not found");
 
         const visitedRes = await fetch(
-          `http://10.12.71.39:7001/api/user/visited-places/${userId}`
+          `http://192.168.0.135:7001/api/user/visited-places/${userId}`
         );
         const { placesVisited } = await visitedRes.json();
         const placeNames = placesVisited.map((p) => p.name).join(", ");
@@ -99,7 +99,7 @@ Return the quiz as a JSON array.
 
     try {
       const res = await fetch(
-        `http://10.12.71.39:7001/api/quiz/submit-score/${userId}`,
+        `http://192.168.0.135:7001/api/quiz/submit-score/${userId}`,
         {
           method: "POST",
           headers: {

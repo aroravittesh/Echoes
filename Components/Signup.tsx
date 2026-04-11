@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -21,10 +22,16 @@ const Signup = () => {
   const handleSignup = async () => {
     try {
       const response = await axios.post(
-        "http://10.12.71.39:7001/api/auth/signup",
+        "http://192.168.0.135:7001/api/auth/signup",
         { username, email, password }
       );
-      const { token } = response.data;
+      const { token, user } = response.data;
+      if (token) {
+        await AsyncStorage.setItem("token", token);
+      }
+      if (user?._id) {
+        await AsyncStorage.setItem("userId", user._id);
+      }
       navigation.navigate("HistoryExplorer");
     } catch (error) {
       setErrorMessage("Error creating account");

@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 // Route imports
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/user');
-const quizRoutes = require('./routes/quiz'); // 👈 Add this line
+const quizRoutes = require('./routes/quiz');
 
 dotenv.config();
 
@@ -21,7 +21,13 @@ app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/quiz', quizRoutes); // 👈 Add this line
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(
+  'mongo_string_here',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+)
   .then(() => {
     console.log('Connected to MongoDB');
     app.listen(port, () => {

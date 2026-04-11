@@ -14,7 +14,7 @@
 
 //       try {
 //         const res = await axios.get(
-//           `http://10.12.71.39:7001/api/user/visited-places/${userId}`
+//           `http://192.168.0.135:7001/api/user/visited-places/${userId}`
 //         );
 //         setPlaces(res.data.placesVisited || []);
 //       } catch (err) {
@@ -136,7 +136,7 @@ const PlacesVisitedScreen = () => {
 
       try {
         const res = await axios.get(
-          `http://10.12.71.39:7001/api/user/visited-places/${userId}`
+          `http://192.168.0.135:7001/api/user/visited-places/${userId}`
         );
         setPlaces(res.data.placesVisited || []);
       } catch (err) {

@@ -14,10 +14,10 @@ export default function LeaderboardScreen() {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const res = await fetch("http://10.12.71.39:7001/api/user/leaderboard");
+        const res = await fetch("http://192.168.0.135:7001/api/user/leaderboard");
         const data = await res.json();
 
-        if (data.success) {
+        if (data.success) {``
           setUsers(data.users);
         } else {
           throw new Error("Failed to fetch leaderboard");
