@@ -22,7 +22,7 @@ app.use('/api/user', userRoutes);
 app.use('/api/quiz', quizRoutes); // 👈 Add this line
 
 mongoose.connect(
-  'mongo_string_here',
+  'MONGO_STRING_URI',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true

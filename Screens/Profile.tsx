@@ -19,7 +19,7 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axios from "axios";
 
-const API_BASE = "http://192.168.0.135:7001";
+const API_BASE = "http://192.168.0.23:7001";
 
 type UserProfile = {
   _id: string;

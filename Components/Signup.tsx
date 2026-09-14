@@ -22,7 +22,7 @@ const Signup = () => {
   const handleSignup = async () => {
     try {
       const response = await axios.post(
-        "http://192.168.0.135:7001/api/auth/signup",
+        "http://192.168.0.23:7001/api/auth/signup",
         { username, email, password }
       );
       const { token, user } = response.data;

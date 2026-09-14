@@ -24,7 +24,7 @@ export default function QuizScreen() {
         if (!userId) throw new Error("User ID not found");
 
         const visitedRes = await fetch(
-          `http://192.168.0.135:7001/api/user/visited-places/${userId}`
+          `http://192.168.0.23:7001/api/user/visited-places/${userId}`
         );
         const { placesVisited } = await visitedRes.json();
         const placeNames = placesVisited.map((p) => p.name).join(", ");
@@ -46,7 +46,7 @@ Return the quiz as a JSON array.
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              Authorization: "Bearer OPENAI_API_KEY",
+              Authorization: "Bearer OPEN_AI_KEY_HERE",
             },
             body: JSON.stringify({
               model: "gpt-3.5-turbo",
@@ -99,7 +99,7 @@ Return the quiz as a JSON array.
 
     try {
       const res = await fetch(
-        `http://192.168.0.135:7001/api/quiz/submit-score/${userId}`,
+        `http://192.168.0.23:7001/api/quiz/submit-score/${userId}`,
         {
           method: "POST",
           headers: {

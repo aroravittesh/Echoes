@@ -24,8 +24,8 @@ const MapScreen = () => {
   const [landmarkDescription, setLandmarkDescription] = useState(null);
   const [visited, setVisited] = useState(false);
 
-  const GOOGLE_API_KEY = "GOOGLE_API_KEY";
-  const OPENAI_API_KEY = "OPENAI_API_KEY";
+  const GOOGLE_API_KEY = "GOOGLE_API_KEY_HERE";
+  const OPENAI_API_KEY = "OPEN_AI_KEY_HERE";
 
   const requestLocationPermission = async () => {
     if (Platform.OS === "android") {
@@ -307,7 +307,7 @@ const MapScreen = () => {
                     };
 
                     await axios.post(
-                      "http://192.168.0.135:7001/api/user/visit",
+                      "http://192.168.0.23:7001/api/user/visit",
                       payload
                     );
                     setVisited(true);

@@ -14,7 +14,7 @@ export default function LeaderboardScreen() {
   useEffect(() => {
     const fetchLeaderboard = async () => {
       try {
-        const res = await fetch("http://192.168.0.135:7001/api/user/leaderboard");
+        const res = await fetch("http://192.168.0.23:7001/api/user/leaderboard");
         const data = await res.json();
 
         if (data.success) {``

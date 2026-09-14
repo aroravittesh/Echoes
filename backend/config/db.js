@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const connectDB = async () => {
   try {
     await mongoose.connect(
-      'mongo_string_here',
+      'MONGO_STRING_URI',
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
